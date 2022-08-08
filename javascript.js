@@ -53,8 +53,17 @@ function operate() {
     if (operator == '*'){
         multiply()
     }
-    if (operator == '/'){
+    if ((operator == '/') && ((x || y) != 0)) {
         divide()
+    }
+    if ((operator == '/') && ((x && y) == 0)) {
+        alert ("DO NOT DIVIDE BY ZERO YOUR CALCULATIONS WILL NOW BE RESET")    
+        displayValue= [];
+        display.textContent = "";
+        x = null;
+        y = null;
+        z = null;
+        operator = null;
     }
 }
 
@@ -139,6 +148,7 @@ zero.addEventListener('click', () => {
     }
 });
 
+
 plus.addEventListener('click', () => {
     if (operator != null){
         equate ()
@@ -207,4 +217,5 @@ function equate () {
     display.textContent = z;
     x = z;
     y = 0;
+
 }
