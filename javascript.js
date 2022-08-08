@@ -1,7 +1,7 @@
 let x;
 let y;
 let z;
-let operator;
+let operator = null;
 let displayValue= [];
 
 const one = document.querySelector('#one');
@@ -56,6 +56,20 @@ function operate() {
     if (operator == '/'){
         divide()
     }
+}
+
+function equate () {
+    if (z != undefined) {
+        x = z
+    };
+    newValue = displayValue.toString();
+    y = newValue.replaceAll(',','')
+    x = Number(x);
+    y = Number(y);
+    operate();
+    display.textContent = z;
+    x = z;
+    y = 0;
 }
 
 one.addEventListener('click', () => {
@@ -139,8 +153,8 @@ zero.addEventListener('click', () => {
 });
 
 plus.addEventListener('click', () => {
-    if (operator != undefined){
-        operate();
+    if (operator != null){
+        equate ()
     }
     newValue = displayValue.toString();
     x = newValue.replaceAll(',','')
@@ -149,6 +163,9 @@ plus.addEventListener('click', () => {
 });
 
 minus.addEventListener('click', () => {
+    if (operator != null){
+        equate ()
+    }
     newValue = displayValue.toString();
     x = newValue.replaceAll(',','')
     displayValue= [];
@@ -156,6 +173,9 @@ minus.addEventListener('click', () => {
 });
 
 times.addEventListener('click', () => {
+    if (operator != null){
+        equate ()
+    }
     newValue = displayValue.toString();
     x = newValue.replaceAll(',','');
     displayValue= [];
@@ -163,6 +183,9 @@ times.addEventListener('click', () => {
 });
 
 division.addEventListener('click', () => {
+    if (operator != null){
+        equate ()
+    }
     newValue = displayValue.toString();
     x = newValue.replaceAll(',','')
     displayValue= [];
@@ -180,15 +203,6 @@ clear.addEventListener('click', () => {
 
 
 equal.addEventListener('click', () => {
-    if (z != undefined) {
-        x = z
-    };
-    newValue = displayValue.toString();
-    y = newValue.replaceAll(',','')
-    x = Number(x);
-    y = Number(y);
-    operate();
-    display.textContent = z;
-    x = z;
-    y = 0;
+    equate ();
+    operator = null;
 });
