@@ -139,6 +139,9 @@ zero.addEventListener('click', () => {
 });
 
 plus.addEventListener('click', () => {
+    if (operator != undefined){
+        operate();
+    }
     newValue = displayValue.toString();
     x = newValue.replaceAll(',','')
     displayValue= [];
@@ -168,6 +171,10 @@ division.addEventListener('click', () => {
 
 clear.addEventListener('click', () => {
     displayValue= [];
+    display.textContent = "";
+    x = 0;
+    y = 0;
+    z = 0;
 });
 
 
