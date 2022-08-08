@@ -53,10 +53,10 @@ function operate() {
     if (operator == '*'){
         multiply()
     }
-    if ((operator == '/') && ((x || y) != 0)) {
+    if ((operator == '/') && ((y) != 0)) {
         divide()
     }
-    if ((operator == '/') && ((x && y) == 0)) {
+    if ((operator == '/') && ((y) == 0)) {
         alert ("DO NOT DIVIDE BY ZERO YOUR CALCULATIONS WILL NOW BE RESET")    
         displayValue= [];
         display.textContent = "";
