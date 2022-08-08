@@ -2,7 +2,7 @@ let x;
 let y;
 let z;
 let operator;
-let displayValue;
+let displayValue= [];
 
 const one = document.querySelector('#one');
 const two = document.querySelector('#two');
@@ -59,99 +59,124 @@ function operate() {
 }
 
 one.addEventListener('click', () => {
-    display.textContent = '1';
-    displayValue = 1;
+    displayValue.push(1);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
   });
 
 two.addEventListener('click', () => {
-    display.textContent = '2';
-    displayValue = 2;
+    displayValue.push(2);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
   });
 
 three.addEventListener('click', () => {
-    display.textContent = '3';
-    displayValue = 3;
+    displayValue.push(3);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 four.addEventListener('click', () => {
-    display.textContent = '4';
-    displayValue = 4;
+    displayValue.push(4);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 five.addEventListener('click', () => {
-    display.textContent = '5';
-    displayValue = 5;
+    displayValue.push(5);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 six.addEventListener('click', () => {
-    display.textContent = '6';
-    displayValue = 6;
+    displayValue.push(6);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 seven.addEventListener('click', () => {
-    display.textContent = '7';
-    displayValue = 7;
+    displayValue.push(7);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 eight.addEventListener('click', () => {
-    display.textContent = '8';
-    displayValue = 8;
+    displayValue.push(8);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 nine.addEventListener('click', () => {
-    display.textContent = '9';
-    displayValue = 9;
+    displayValue.push(9);
+    display.textContent = displayValue.join("");
+    if (x != undefined) {
+        y = displayValue;
+    }
+});
+
+zero.addEventListener('click', () => {
+    displayValue.push(0);
+    display.textContent = displayValue.join("");
     if (x != undefined) {
         y = displayValue;
     }
 });
 
 plus.addEventListener('click', () => {
-    x = displayValue;
+    newValue = displayValue.toString();
+    x = newValue.replaceAll(',','')
+    displayValue= [];
     operator = "+";
 });
 
 minus.addEventListener('click', () => {
-    x = displayValue;
+    newValue = displayValue.toString();
+    x = newValue.replaceAll(',','')
+    displayValue= [];
     operator = "-";
 });
 
 times.addEventListener('click', () => {
-    x = displayValue;
+    newValue = displayValue.toString();
+    x = newValue.replaceAll(',','');
+    displayValue= [];
     operator = "*";
 });
 
 division.addEventListener('click', () => {
-    x = displayValue;
+    newValue = displayValue.toString();
+    x = newValue.replaceAll(',','')
+    displayValue= [];
     operator = "/";
 });
 
+clear.addEventListener('click', () => {
+    displayValue= [];
+});
+
+
 
 equal.addEventListener('click', () => {
+    newValue = displayValue.toString();
+    y = newValue.replaceAll(',','')
+    x = Number(x);
+    y = Number(y);
     operate();
     display.textContent = z;
 });
