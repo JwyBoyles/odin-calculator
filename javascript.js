@@ -173,10 +173,15 @@ clear.addEventListener('click', () => {
 
 
 equal.addEventListener('click', () => {
+    if (z != undefined) {
+        x = z
+    };
     newValue = displayValue.toString();
     y = newValue.replaceAll(',','')
     x = Number(x);
     y = Number(y);
     operate();
     display.textContent = z;
+    x = z;
+    y = 0;
 });
