@@ -1,6 +1,10 @@
+button {
+    font-size: 36px;
+}
+
 #display {
     background-color: silver;
-    border: 2px solid blue;
+    border: 2px solid black;
     font-size: 72px;
     width: 1000px;
     height: 200px;
@@ -16,10 +20,22 @@
 }
 
 .calButtons {
-    border: 2px solid #ff0000;
+    border: 2px solid black;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     width: 1000px;
     height: 600px;
 }
 
+#plus, #minus, #times, #division {
+    background-color: orange;
+}
+
+#equal{
+    background-color: green;
+}
+
+#clear {
+    background-color: black;
+    color: white;
+}
