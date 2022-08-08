@@ -58,19 +58,6 @@ function operate() {
     }
 }
 
-function equate () {
-    if (z != undefined) {
-        x = z
-    };
-    newValue = displayValue.toString();
-    y = newValue.replaceAll(',','')
-    x = Number(x);
-    y = Number(y);
-    operate();
-    display.textContent = z;
-    x = z;
-    y = 0;
-}
 
 one.addEventListener('click', () => {
     displayValue.push(1);
@@ -195,9 +182,10 @@ division.addEventListener('click', () => {
 clear.addEventListener('click', () => {
     displayValue= [];
     display.textContent = "";
-    x = 0;
-    y = 0;
-    z = 0;
+    x = null;
+    y = null;
+    z = null;
+    operator = null;
 });
 
 
@@ -206,3 +194,17 @@ equal.addEventListener('click', () => {
     equate ();
     operator = null;
 });
+
+function equate () {
+    if (z != undefined) {
+        x = z
+    };
+    newValue = displayValue.toString();
+    y = newValue.replaceAll(',','')
+    x = Number(x);
+    y = Number(y);
+    operate();
+    display.textContent = z;
+    x = z;
+    y = 0;
+}
